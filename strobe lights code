@@ -1,6 +1,6 @@
 function setup() {
   createCanvas(600, 550);
-}
+ }
  let t=1;
 
 let rot=0;
@@ -8,7 +8,7 @@ let speed=0.0001;
 function draw() {
   background('black');
   
-  let x= height/25; 
+  let x= height/25+mouseX*2; 
  let y= width/30;
   let j=0;
   let i=0;
@@ -19,6 +19,9 @@ function draw() {
  rotate(rot+=speed);
      stroke('rgb(237,205,243)');
      line(width/((i*100)), sin(height/j)-cos(x),         width+height*j/2,height*2*j/3);
+     
+     let d= sqrt(mouseX*PI+ mouseY*mouseY);
+    //rect(d+d, d, sin(d/j)-cos(x),d*2*j/3);
      
      fill(random(255),random(255),random(245),random(205));
      
@@ -44,6 +47,17 @@ function moves(i,j){
         line( width*j/2-ta, height/2-i*j/10,(j/i*5), 0.7*j);
   
   
+}
+
+
+function move2(i,j){
+  stroke('#E2DAE6');
+  //translate(i/20,j/100);
+ // rotate(rot+=speed);
+      line( width*j, height/2-i*j/10,(j/i*5), 0.7*j);
+     
+     fill(random(230),random(255),random(255),random(225));
+}
 }
 
 
